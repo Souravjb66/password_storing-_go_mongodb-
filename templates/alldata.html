@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+</head>
+<body>
+    <h1>your passwords</h1>
+    <div id="d1">
+        <h2 id="h1"></h2>
+        <h2 id="h2"></h2>
+        <h2 id="h3"></h2>
+        <button id="b1">click</button>
+
+    </div>
+    <script>
+        document.getElementById("b1").addEventListener("click",call)
+        async function call(){
+            try{
+                const first=await fetch("http://127.0.0.1:8080/getprac")
+                const j1=await first.json()
+                document.getElementById("h1").innerText=JSON.stringify(j1.Date)
+                console.log(j1.Name)
+
+            }
+            catch(err){
+                console.log(err)
+            }
+           
+
+
+        }
+    </script>
+    
+</body>
+</html>
